@@ -20,9 +20,9 @@ PORT = int(os.environ.get('PORT', 3000))       # http服务端口
 SUB_PATH = os.environ.get('SUB_PATH', 'sub')   # 订阅token
 config = {
     'UUID': os.environ.get('UUID', '116a21b9-a330-477a-af81-8d9119eb98c0'), # 节点UUID，使用哪吒v1时在不不同的平台部署需要修改，否则agent会覆盖
-    'NEZHA_SERVER': os.environ.get('NEZHA_SERVER', 'nz.xry.kdns.fr:443'), # 哪吒面板地址，v1格式: nezha.xxx.com:8008  v0格式： nezha.xxx.com
+    'NEZHA_SERVER': os.environ.get('NEZHA_SERVER', 'nezha.july.kdns.fr:10063'), # 哪吒面板地址，v1格式: nezha.xxx.com:8008  v0格式： nezha.xxx.com
     'NEZHA_PORT': os.environ.get('NEZHA_PORT', ''),     # 哪吒v1请留空，哪吒v0 agent端口
-    'NEZHA_KEY': os.environ.get('NEZHA_KEY', 'oZEaed4hQmmjuTBzga1vE5HlUPFbYvCw'),       # 哪吒v1的NZ_CLIENT_SECRET或哪吒v0-agent密钥
+    'NEZHA_KEY': os.environ.get('NEZHA_KEY', 'IWV1jk7lUMOldX2F7cY5PvBBtLWYwxXa'),       # 哪吒v1的NZ_CLIENT_SECRET或哪吒v0-agent密钥
     'ARGO_DOMAIN': os.environ.get('ARGO_DOMAIN', 'streamlit.holoy.qzz.io'),   # 固定隧道域名,留空即启用临时隧道
     'ARGO_AUTH': os.environ.get('ARGO_AUTH', 'eyJhIjoiYjNiMmRhZjE1YjIzYmQ2ZmIzNzZlNGViYTRhYzczYTEiLCJ0IjoiZmQzNzY4NTktNWEzYS00YjE2LWIyOGYtM2RjYzc0MThlZjAxIiwicyI6IlptSmpZVEV4WlRJdFlXWmxaUzAwTlRNekxXSmxPR0V0TWpVeU1Ea3hZV1UyWW1ZeCJ9'),       # 固定隧道token或json,留空即启用临时隧道,json获取:https://json.zone.id
     'ARGO_PORT': os.environ.get('ARGO_PORT', '8001'),   # argo端口 使用固定隧道token,cloudflare后台设置的端口需和这里对应
