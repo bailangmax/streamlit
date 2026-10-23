@@ -33,9 +33,9 @@ jobs:
 
       # --- 第二阶段：环境准备 ---
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.9'
+          python-version: '3.11'
 
       - name: Install Selenium and Chrome Driver
         run: |
@@ -109,7 +109,7 @@ jobs:
               driver.quit()
           EOF
 
-      # --- 【新增阶段】：上传截图到 GitHub ---
+      # --- 第四阶段：上传截图到 GitHub ---
       - name: Upload Debug Screenshots
         uses: actions/upload-artifact@v4
         if: always() # 无论成功还是失败，都执行上传操作
@@ -121,7 +121,7 @@ jobs:
             error_screenshot.png
           retention-days: 3 # 截图保留3天
 
-      # --- 第四阶段：通知 ---
+      # --- 第五阶段：通知 ---
       - name: Send Telegram notification on success
         if: success()
         uses: appleboy/telegram-action@master
